@@ -4,7 +4,33 @@
 #include "hiredis/hiredis.h"
 
 
+// welcome you all. this the the program for communication with a redis server
+/*
+I have outline some functions that are need to be filed in. 
 
+IMPORTANT desinge decisions:
+products are stored with  "product code" as key
+supplieras are stored with  "name" as key
+productsupplier are stored with "supplier_id" as key
+orders are stored with "order_id" as key
+
+to search for which prod a supl has you search for the name in the function, then the funtion find the supl_id and get with that.
+
+updating is straight forward, just use HSET I think
+
+remove/delete: maybe just delete 
+
+
+Axel takes the hiredis functions.
+
+
+FOR THE UNINITIATED in hiredis and redis: (if you dont have to time to learn it)
+maybe we should create functions that first creates (a from example) prod on the stack, and then add that it to redis,
+so that we dont have to manually add them. 
+also for update and delete. 
+
+if you feel really fancy it would be great to have a menu as in ioopm wearhouse, maybe we could just steal that code. 
+*/
 
 
 typedef struct product{
@@ -49,6 +75,9 @@ void add_prodSupl_to_redis(redisContext c, redisReply reply, productSupplier ps)
     
     reply = redisCommand(c,"HSET", ps.supl.supplier_id,   )
 }
+
+
+
 
 
 int main(int argc, char **argv[]){
