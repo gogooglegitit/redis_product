@@ -19,4 +19,9 @@ to same for the supplier. the supplier name is the key for the hash-set.
 
 but since the supplier name is the key for the supplier we have to use the supplier_id for the productsupplier structure. to find which products a supplier
 
+USEFULL LINKES:
+https://www.tutorialspoint.com/redis/redis_hashes.htm
+https://redis.io/commands/?group=hash
 
+to install hiredis: 
+https://github.com/redis/hiredis
